@@ -11,6 +11,11 @@ abstract class SuperMommaCharConverter implements CharConverter {
     private HashMap<String , Character> toCharMap;
 
     SuperMommaCharConverter(){
+        alphabet        = new ArrayList<>();
+        morseAlphabet   = new ArrayList<>();
+        toMorseMap      = new HashMap<>();
+        toCharMap       = new HashMap<>();
+
         addAlphabet();
 
         if (alphabet.size() == morseAlphabet.size()){

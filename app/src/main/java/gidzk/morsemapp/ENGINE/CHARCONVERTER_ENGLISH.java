@@ -2,9 +2,9 @@ package gidzk.morsemapp.ENGINE;
 
 
 public class CHARCONVERTER_ENGLISH extends SuperMommaCharConverter {
-
     CHARCONVERTER_ENGLISH() {
     super();
+
     }
 
     @Override

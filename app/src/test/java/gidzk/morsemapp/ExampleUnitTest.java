@@ -2,7 +2,11 @@ package gidzk.morsemapp;
 
 import org.junit.Test;
 
-import gidzk.morsemapp.ENGINE.MorseHandler;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import gidzk.morsemapp.ENGINE.LanguageHandler;
 
 import static org.junit.Assert.*;
 
@@ -17,14 +21,23 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-
     @Test
     public void parseIsOk() throws Exception{
 
-        MorseHandler handler = new MorseHandler();
+        LanguageHandler handler = new LanguageHandler();
+        ArrayList oldParse = handler.encryptParse("OLDPARSE");
+        //System.out.println(oldParse);
 
 
-        System.out.println(handler.parse("ABCDEFGHIJKLMNPQRSTUVXYZ"));
+        List<List<String>> woSpaces = (List<List<String>>) handler.parse("IHATESPACES");
+        List<List<String>> wSpaces  = (List<List<String>>) handler.parse("I HATE SPACES");
+
+
+        System.out.println( "without spaces " +  (woSpaces));
+        System.out.println(" with spaces " + (wSpaces));
+
+
+
 
 
 
