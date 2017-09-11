@@ -11,13 +11,11 @@ public class LanguageHandler {
         this.converter = converter;
 
     }
-
     public LanguageHandler(){
         this.converter = new CHARCONVERTER_ENGLISH();
 
     }
-
-
+    
     // seems to be working, write some more tests to make sure.
     public List<List<String>> parse (String input){
 
@@ -42,8 +40,6 @@ public class LanguageHandler {
     return outer;
 
     }
-
-
 
 
     // dont use ,does not function with spaces

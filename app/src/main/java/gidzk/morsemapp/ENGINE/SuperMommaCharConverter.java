@@ -16,10 +16,13 @@ abstract class SuperMommaCharConverter implements CharConverter {
         toMorseMap      = new HashMap<>();
         toCharMap       = new HashMap<>();
 
+
         addAlphabet();
+        addNumerics();
 
         if (alphabet.size() == morseAlphabet.size()){
             initCharMap();
+
             initMorseMap();
 
         }else {
@@ -37,6 +40,42 @@ abstract class SuperMommaCharConverter implements CharConverter {
         return toCharMap.get(str);
     }
     //---------------- CONSTRUCTOR METHODS-------------------
+
+
+    private void addNumerics(){
+
+        alphabet.add('0');
+        morseAlphabet.add("-----");
+
+        alphabet.add('1');
+        morseAlphabet.add(".----");
+
+        alphabet.add('2');
+        morseAlphabet.add("..---");
+
+        alphabet.add('3');
+        morseAlphabet.add("...--");
+
+        alphabet.add('4');
+        morseAlphabet.add("....-");
+
+        alphabet.add('5');
+        morseAlphabet.add(".....");
+
+        alphabet.add('6');
+        morseAlphabet.add("-....");
+
+        alphabet.add('7');
+        morseAlphabet.add("--...");
+
+        alphabet.add('8');
+        morseAlphabet.add("---..");
+
+        alphabet.add('9');
+        morseAlphabet.add("----.");
+
+
+    }
 
     abstract void addAlphabet();
 
