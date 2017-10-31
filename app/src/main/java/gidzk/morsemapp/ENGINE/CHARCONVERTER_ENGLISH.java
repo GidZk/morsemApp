@@ -1,13 +1,13 @@
 package gidzk.morsemapp.ENGINE;
 
 
-public class CHARCONVERTER_ENGLISH extends SuperMommaCharConverter {
+ public class CHARCONVERTER_ENGLISH extends SuperMommaCharConverter {
     CHARCONVERTER_ENGLISH() {
     super();
 
     }
     @Override
-    void addAlphabet(){
+    protected void addAlphabet(){
 
         alphabet.add('a');
         morseAlphabet.add(".-");
@@ -89,4 +89,16 @@ public class CHARCONVERTER_ENGLISH extends SuperMommaCharConverter {
 
     }
 
-}
+
+    //TODO find regex s.t all my invalid characters will be added.
+     @Override
+     void addInvalids() {
+
+         INVALID_CHARS.add('#');
+         INVALID_CHARS.add('$');
+
+     }
+
+
+
+ }

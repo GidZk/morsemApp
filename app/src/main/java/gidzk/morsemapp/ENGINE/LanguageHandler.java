@@ -16,6 +16,12 @@ public class LanguageHandler {
 
     }
 
+
+    /**
+     *
+     * @param input the string that is going to get inputted.
+     * @return
+     */
     public List<String> parse (String input){
 
         List <String>         outer = new ArrayList<>();
@@ -25,8 +31,7 @@ public class LanguageHandler {
         for (Character c : input.toLowerCase().toCharArray()){
 
             if (c != ' '){
-                builder.append(converter.encrypt(c));
-
+                builder.append(converter.encrypt(c)).append("|");
 
 
             }else {
@@ -44,16 +49,15 @@ public class LanguageHandler {
 
     }
 
-
-    // dont use ,does not function with spaces
-    public ArrayList<List<String>> encryptParse(String input){
+    // not really done yet
+    public ArrayList<String> encryptParse(String input){
         List<String> trg = new ArrayList<>();
 
         for (Character c :input.toLowerCase().toCharArray()){
             trg.add(converter.encrypt(c));
         }
 
-        return new ArrayList<>(Arrays.asList(trg));
+        return null;
 
     }
 
