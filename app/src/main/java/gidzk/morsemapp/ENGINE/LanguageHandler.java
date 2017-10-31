@@ -15,26 +15,29 @@ public class LanguageHandler {
         this.converter = new CHARCONVERTER_ENGLISH();
 
     }
-    
-    // seems to be working, write some more tests to make sure.
-    public List<List<String>> parse (String input){
 
-        List <List <String>> outer = new ArrayList<>();
-        List<String>         inner = new ArrayList<>();
+    public List<String> parse (String input){
 
+        List <String>         outer = new ArrayList<>();
+        StringBuilder builder       = new StringBuilder();
+        String inner;
 
         for (Character c : input.toLowerCase().toCharArray()){
 
             if (c != ' '){
-                inner.add(converter.encrypt(c));
+                builder.append(converter.encrypt(c));
+
+
 
             }else {
-                outer.add(inner);
-                inner.clear();
+                inner = builder.toString();
+                 outer.add(inner);
+                // clears the current stringBuilder.
+                builder.setLength(0);
+
             }
-
         }
-
+        inner = builder.toString();
         outer.add(inner);
 
     return outer;

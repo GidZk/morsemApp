@@ -22,7 +22,6 @@ abstract class SuperMommaCharConverter implements CharConverter {
 
         if (alphabet.size() == morseAlphabet.size()){
             initCharMap();
-
             initMorseMap();
 
         }else {

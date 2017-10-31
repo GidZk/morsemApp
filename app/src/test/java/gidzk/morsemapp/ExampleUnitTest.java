@@ -29,11 +29,11 @@ public class ExampleUnitTest {
         //System.out.println(oldParse);
 
 
-        List<List<String>> woSpaces = (List<List<String>>) handler.parse("IHATESPACES");
-        List<List<String>> wSpaces  = (List<List<String>>) handler.parse("I HATE SPACES");
+        List<String> woSpaces =  handler.parse("ABCD");
+        List<String> wSpaces  =  handler.parse("A B C D");
 
 
-        System.out.println( "without spaces " +  (woSpaces));
+       System.out.println( "without spaces " +  (woSpaces));
         System.out.println(" with spaces " + (wSpaces));
 
 
