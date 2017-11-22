@@ -2,6 +2,7 @@ package gidzk.morsemapp;
 
 import org.junit.Test;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,12 +30,14 @@ public class ExampleUnitTest {
         //System.out.println(oldParse);
 
 
-        List<String> woSpaces =  handler.parse("ABCD");
-        List<String> wSpaces  =  handler.parse("A B C D");
-
+        List<String> woSpaces =  handler.parse("Hello, my name is John");
+        List<String> wSpaces  =  handler.parse("A B C D E F G H I J K L M N O P Q R S T U V X Y Z");
+        List<String> specials = handler.parse(". , : ? ' - / "+ (char) (34) + " @ =");
 
        System.out.println( "without spaces " +  (woSpaces));
         System.out.println(" with spaces " + (wSpaces));
+        System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
+        System.out.println("Special characters: " + specials);
 
 
 

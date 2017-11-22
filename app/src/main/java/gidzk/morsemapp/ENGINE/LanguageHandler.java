@@ -1,7 +1,6 @@
 package gidzk.morsemapp.ENGINE;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LanguageHandler {
@@ -12,7 +11,7 @@ public class LanguageHandler {
 
     }
     public LanguageHandler(){
-        this.converter = new CHARCONVERTER_ENGLISH();
+        this.converter = new CHARCONVERTER_INTERNATIONAL();
 
     }
 

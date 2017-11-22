@@ -1,12 +1,85 @@
 package gidzk.morsemapp.ENGINE;
 
 
- public class CHARCONVERTER_ENGLISH extends SuperMommaCharConverter {
-    CHARCONVERTER_ENGLISH() {
+ public class CHARCONVERTER_INTERNATIONAL extends SuperMommaCharConverter {
+
+     /**
+      *skipping () brackets, morsecode dont have both of them and I want to skip ambiguty
+      *
+      *
+      */
+
+
+
+
+
+
+
+
+
+
+
+     CHARCONVERTER_INTERNATIONAL() {
     super();
 
     }
-    @Override
+
+     @Override
+     void addValids() {
+
+        alphabet.add('.');
+        morseAlphabet.add(".-.-.-");
+
+        alphabet.add(',');
+        morseAlphabet.add("--..--");
+        // questionmarl '?'
+
+         alphabet.add(':');
+         morseAlphabet.add("---...");
+
+        alphabet.add('?');
+        morseAlphabet.add("..--..");
+
+        //aphostrofe '
+        alphabet.add((char)(39));
+        morseAlphabet.add(".----.");
+
+        //Hyphen   "-"
+        alphabet.add((char)(45));
+        morseAlphabet.add("-....-");
+
+        //  slash '/'
+         alphabet.add((char)(47));
+        morseAlphabet.add("-..-.");
+
+
+        //skipping brackets : reason ambiguity backwards
+
+       // alphabet.add('(');
+       // morseAlphabet.add("-.--.-");
+
+       // alphabet.add(')');
+       // morseAlphabet.add("-.--.-");
+
+        alphabet.add('"');
+        morseAlphabet.add(".-..-.");
+
+        alphabet.add('@');
+        morseAlphabet.add(".--.-.");
+
+        alphabet.add('=');
+        morseAlphabet.add("-...-");
+
+
+
+
+
+
+
+
+     }
+
+     @Override
     protected void addAlphabet(){
 
         alphabet.add('a');
