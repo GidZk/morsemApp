@@ -169,7 +169,6 @@ package gidzk.morsemapp.ENGINE;
 
          INVALID_CHARS.add('#');
          INVALID_CHARS.add('$');
-
      }
 
 

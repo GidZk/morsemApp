@@ -15,11 +15,15 @@ public class LanguageHandler {
 
     }
 
-
     /**
      *
-     * @param input the string that is going to get inputted.
-     * @return
+     * @param input
+     *  requirements : non null String
+     *               : specified string from current domain alphabet
+     *
+     *
+     * @return a List of Strings in current language
+     * ensures :
      */
     public List<String> parse (String input){
 
@@ -45,7 +49,6 @@ public class LanguageHandler {
         outer.add(inner);
 
     return outer;
-
     }
 
     // not really done yet
