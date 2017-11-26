@@ -83,7 +83,7 @@ package gidzk.morsemapp.ENGINE;
     protected void addAlphabet(){
 
         alphabet.add('a');
-        morseAlphabet.add(".-");
+         morseAlphabet.add(".-");
 
         alphabet.add('b');
         morseAlphabet.add("-...");

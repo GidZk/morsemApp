@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MorsemApp.iml" filepath="$PROJECT_DIR$/MorsemApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MorsemApp.iml" filepath="$PROJECT_DIR$/MorsemApp.iml" />
+      <module fileurl="file://E:\Programmering\projects\morsemApp\MorsemApp.iml" filepath="E:\Programmering\projects\morsemApp\MorsemApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Programmering\projects\morsemApp\app\app.iml" filepath="E:\Programmering\projects\morsemApp\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/morsemApp.iml" filepath="$PROJECT_DIR$/morsemApp.iml" />
     </modules>
   </component>
 </project>
