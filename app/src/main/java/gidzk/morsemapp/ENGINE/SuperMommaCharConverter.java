@@ -27,7 +27,7 @@ import java.util.HashMap;
  *
  */
 
-abstract class SuperMommaCharConverter implements CharConverter {
+public abstract class SuperMommaCharConverter implements CharConverter {
 
 
     ArrayList<Character> alphabet;
@@ -39,7 +39,7 @@ abstract class SuperMommaCharConverter implements CharConverter {
     private final int validCharacterIndex;
     private final int numericIndex;
 
-    SuperMommaCharConverter() {
+     protected SuperMommaCharConverter() {
         alphabet = new ArrayList<>();
         morseAlphabet = new ArrayList<>();
         INVALID_CHARS = new ArrayList<>();
@@ -123,11 +123,11 @@ abstract class SuperMommaCharConverter implements CharConverter {
     }
 
 
-    abstract void addValids();
+    public abstract void addValids();
 
-    abstract void addAlphabet();
+    protected abstract void addAlphabet();
 
-    abstract void addInvalids();
+    protected abstract void addInvalids();
 
     private void initMorseMap(){
         for (int i = 0 ; i < morseAlphabet.size(); i ++ ){

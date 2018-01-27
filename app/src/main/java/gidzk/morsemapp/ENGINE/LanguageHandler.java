@@ -36,7 +36,6 @@ public class LanguageHandler {
             if (c != ' '){
                 builder.append(converter.encrypt(c)).append("|");
 
-
             }else {
                 inner = builder.toString();
                  outer.add(inner);

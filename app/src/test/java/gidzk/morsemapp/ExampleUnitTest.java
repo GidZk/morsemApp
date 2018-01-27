@@ -2,11 +2,10 @@ package gidzk.morsemapp;
 
 import org.junit.Test;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import gidzk.morsemapp.ENGINE.CharConverter;
 import gidzk.morsemapp.ENGINE.LanguageHandler;
 
 import static org.junit.Assert.*;
@@ -42,7 +41,17 @@ public class ExampleUnitTest {
 
         System.out.println();
 
+    }
 
+    @Test
+    public void testCharConverter(){
+
+
+        CharConverter c = new TESTLIBRARY();
+
+
+
+        System.out.println(c.decrypt("k"));
 
 
     }
@@ -50,4 +59,8 @@ public class ExampleUnitTest {
 
 
 
+
 }
+
+
+

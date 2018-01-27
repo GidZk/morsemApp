@@ -25,7 +25,7 @@ package gidzk.morsemapp.ENGINE;
     }
 
      @Override
-     void addValids() {
+     public void addValids() {
 
         alphabet.add('.');
         morseAlphabet.add(".-.-.-");
