@@ -15,7 +15,17 @@ public class TESTLIBRARY extends SuperMommaCharConverter {
     }
 
     @Override
-    public void addValids() {
+    protected void addNumerics() {
+
+
+
+    }
+
+    @Override
+    public void addSymbols() {
+
+        toDecryptMap.put('a',"This testing string is pwetty cool");
+
 
     }
 
@@ -24,11 +34,8 @@ public class TESTLIBRARY extends SuperMommaCharConverter {
 
     }
 
-    @Override
-    protected void addInvalids() {
-
     }
-}
+
 
 
 
