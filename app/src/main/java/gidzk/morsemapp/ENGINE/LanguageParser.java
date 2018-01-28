@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-  public class LanguageParser implements LanguageHandler {
-    CharConverter converter;
+import gidzk.morsemapp.Libs.Library_English;
 
+public class LanguageParser implements Translator {
+    CharConverter converter;
 
     //TODO add  (adress of some sort) constructor to be able to fetch code from some database
     //TODO add
 
-    public LanguageParser(CharConverter converter){
-        this.converter = converter;
+    public LanguageParser(){
+        this.converter = new SuperMommaCharConverter(new Library_English());
 
     }
 
-    public LanguageParser(){
+    public LanguageParser(LanguageExtension library){
 
-        this.converter = new CHARCONVERTER_INTERNATIONAL();
+        this.converter = new SuperMommaCharConverter(library);
 
     }
 

@@ -8,10 +8,9 @@ import java.util.List;
  * Created by John on 2018-01-27.
  */
 
-public interface LanguageHandler {
+public interface Translator {
 
     Collection<String> decryptParse(String input);
-
 
     Collection<String> encryptParse(String input);
 

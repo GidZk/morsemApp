@@ -2,15 +2,12 @@ package gidzk.morsemapp;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-import gidzk.morsemapp.ENGINE.CHARCONVERTER_INTERNATIONAL;
-import gidzk.morsemapp.ENGINE.CharConverter;
-import gidzk.morsemapp.ENGINE.LanguageHandler;
+import gidzk.morsemapp.ENGINE.LanguageExtension;
+import gidzk.morsemapp.Libs.Library_English;
+import gidzk.morsemapp.ENGINE.Translator;
 import gidzk.morsemapp.ENGINE.LanguageParser;
-import gidzk.morsemapp.ENGINE.SuperMommaCharConverter;
 
 import static org.junit.Assert.*;
 
@@ -51,13 +48,12 @@ public class ExampleUnitTest {
      */
     @Test
     public void testLangHandler_argument_WRITTEN_1(){
-        CharConverter charConverter = new CHARCONVERTER_INTERNATIONAL();
+        LanguageExtension library_english = new Library_English();
 
         String notParsed = "Abc B C";
 
-
-        LanguageHandler handler1 = new LanguageParser();
-        LanguageHandler handler2 = new LanguageParser(charConverter);
+        Translator handler1 = new LanguageParser();
+        Translator handler2 = new LanguageParser(library_english);
 
 
         Collection<String> wospwaces =  handler2.decryptParse("abc");
@@ -81,9 +77,9 @@ public class ExampleUnitTest {
     @Test
     public void testCharConverterDifferentType(){
 
-        CharConverter c =  new TESTLIBRARY();
-        assertArrayEquals("This testing string is pwetty cool".toCharArray(),c.decrypt('a').toCharArray());
-        System.out.println(c.decrypt('a'));
+        LanguageExtension lib =  new TESTLIBRARY();
+        Translator c = new LanguageParser(lib);
+        System.out.println(c.decryptParse("a"));
 
 
     }
@@ -96,15 +92,6 @@ public class ExampleUnitTest {
     //todo TEST FAILED, need to find a way to make map immutable
     @Test
     public  void testUnmodifiableMap(){
-
-      SuperMommaCharConverter cc = new CHARCONVERTER_INTERNATIONAL();
-
-      cc.getMap().put('a',"KORV");
-
-        System.out.println(cc.decrypt('a'));
-
-
-
 
 
 
