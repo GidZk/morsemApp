@@ -1,40 +1,38 @@
 package gidzk.morsemapp;
 
+import java.util.HashMap;
+
 import gidzk.morsemapp.ENGINE.CharConverter;
-import gidzk.morsemapp.ENGINE.SuperMommaCharConverter;
+import gidzk.morsemapp.ENGINE.LanguageExtension;
 
 /**
  * Created by John on 2018-01-27.
  */
 
-public class TESTLIBRARY extends SuperMommaCharConverter {
+public class TESTLIBRARY implements LanguageExtension {
 
 
-    TESTLIBRARY() {
-        super();
+    @Override
+    public String languageName() {
+        return "untz";
     }
 
     @Override
-    protected void addNumerics() {
+    public HashMap<Character, String> initAlphabet_decrpyt() {
+
+        HashMap <Character ,String> fagget = new HashMap();
+
+        fagget.put('a',"JEEEZUS");
 
 
-
+        return fagget;
     }
 
     @Override
-    public void addSymbols() {
-
-        toDecryptMap.put('a',"This testing string is pwetty cool");
-
-
+    public HashMap<String, Character> initAlphabet_encrpyt() {
+        return null;
     }
-
-    @Override
-    protected void addAlphabet() {
-
-    }
-
-    }
+}
 
 
 
