@@ -2,12 +2,15 @@ package gidzk.morsemapp;
 
 import org.junit.Test;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
+import gidzk.morsemapp.ENGINE.CHARCONVERTER_INTERNATIONAL;
+import gidzk.morsemapp.ENGINE.CharConverter;
 import gidzk.morsemapp.ENGINE.LanguageHandler;
+import gidzk.morsemapp.ENGINE.LanguageParser;
+import gidzk.morsemapp.ENGINE.SuperMommaCharConverter;
 
 import static org.junit.Assert.*;
 
@@ -25,14 +28,14 @@ public class ExampleUnitTest {
     @Test
     public void parseIsOk() throws Exception{
 
-        LanguageHandler handler = new LanguageHandler();
-        ArrayList oldParse = handler.encryptParse("OLDPARSE");
+        LanguageParser handler = new LanguageParser();
+        Collection oldParse = handler.encryptParse("OLDPARSE");
         //System.out.println(oldParse);
 
 
-        List<String> wospwaces =  handler.parse("abc");
-        List<String> wSpaces  =  handler.parse("Abc B C");
-        List<String> specials = handler.parse(". , : ? ' - / "+ (char) (34) + " @ =");
+        Collection<String> wospwaces =  handler.decryptParse("abc");
+        Collection<String> wSpaces  =  handler.decryptParse("Abc B C");
+        Collection<String> specials = handler.decryptParse(". , : ? ' - / "+ (char) (34) + " @ =");
 
 
        System.out.println( "without spaces " +  (wospwaces));
@@ -40,7 +43,67 @@ public class ExampleUnitTest {
         System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
         System.out.println("Special characters: " + specials);
 
-        System.out.println();
+
+    }
+
+    /**
+     * tests that lang handler with and without arguments give  the same output
+     */
+    @Test
+    public void testLangHandler_argument_WRITTEN_1(){
+        CharConverter charConverter = new CHARCONVERTER_INTERNATIONAL();
+
+        String notParsed = "Abc B C";
+
+
+        LanguageHandler handler1 = new LanguageParser();
+        LanguageHandler handler2 = new LanguageParser(charConverter);
+
+
+        Collection<String> wospwaces =  handler2.decryptParse("abc");
+        Collection<String> wSpaces  =  handler2.decryptParse("Abc B C");
+        Collection<String> specials = handler2.decryptParse(". , : ? ' - / "+ (char) (34) + " @ =");
+
+
+        System.out.println( "without spaces " +  (wospwaces));
+        System.out.println(" with spaces " + (wSpaces));
+        System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
+        System.out.println("Special characters: " + specials);
+
+
+        assertArrayEquals(handler1.decryptParse(notParsed).toArray(),handler2.decryptParse(notParsed).toArray());
+
+
+
+    }
+
+
+    @Test
+    public void testCharConverterDifferentType(){
+
+        CharConverter c =  new TESTLIBRARY();
+        assertArrayEquals("This testing string is pwetty cool".toCharArray(),c.decrypt('a').toCharArray());
+        System.out.println(c.decrypt('a'));
+
+
+    }
+
+
+
+
+
+
+    //todo TEST FAILED, need to find a way to make map immutable
+    @Test
+    public  void testUnmodifiableMap(){
+
+      SuperMommaCharConverter cc = new CHARCONVERTER_INTERNATIONAL();
+
+      cc.getMap().put('a',"KORV");
+
+        System.out.println(cc.decrypt('a'));
+
+
 
 
 
@@ -50,4 +113,9 @@ public class ExampleUnitTest {
 
 
 
+
+
 }
+
+
+

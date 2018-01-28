@@ -1,77 +1,38 @@
 package gidzk.morsemapp.ENGINE;
 
 
- public class CHARCONVERTER_INTERNATIONAL extends SuperMommaCharConverter {
-
-     /**
-      *skipping () brackets, morsecode dont have both of them and I want to skip ambiguty
-      *
-      *
-      */
+ public class CHARCONVERTER_INTERNATIONAL extends SuperMommaCharConverter  {
 
 
-
-
-
-
-
-
-
-
-
-     CHARCONVERTER_INTERNATIONAL() {
+     public CHARCONVERTER_INTERNATIONAL() {
     super();
 
     }
 
      @Override
-     void addValids() {
-
-        alphabet.add('.');
-        morseAlphabet.add(".-.-.-");
-
-        alphabet.add(',');
-        morseAlphabet.add("--..--");
-        // questionmarl '?'
-
-         alphabet.add(':');
-         morseAlphabet.add("---...");
-
-        alphabet.add('?');
-        morseAlphabet.add("..--..");
-
-        //aphostrofe '
-        alphabet.add((char)(39));
-        morseAlphabet.add(".----.");
-
-        //Hyphen   "-"
-        alphabet.add((char)(45));
-        morseAlphabet.add("-....-");
-
-        //  slash '/'
-         alphabet.add((char)(47));
-        morseAlphabet.add("-..-.");
+     public void addSymbols() {
 
 
-        //skipping brackets : reason ambiguity backwards
+         toDecryptMap.put('.',".-.-.-");
 
-       // alphabet.add('(');
-       // morseAlphabet.add("-.--.-");
+         toDecryptMap.put(',',"--..--");
 
-       // alphabet.add(')');
-       // morseAlphabet.add("-.--.-");
+         toDecryptMap.put(':',"---...");
 
-        alphabet.add('"');
-        morseAlphabet.add(".-..-.");
+         toDecryptMap.put('?',"..--..");
 
-        alphabet.add('@');
-        morseAlphabet.add(".--.-.");
+         //aphostrofe '
+         toDecryptMap.put((char)(39),".----.");
 
-        alphabet.add('=');
-        morseAlphabet.add("-...-");
+         toDecryptMap.put((char)(45),"-....-");
 
+         toDecryptMap.put((char)(47),"-..-.");
 
+         toDecryptMap.put('"',".-..-.");
 
+         toDecryptMap.put('@',".--.-.");
+
+         toDecryptMap.put('=',"-...-");
 
 
 
@@ -82,94 +43,98 @@ package gidzk.morsemapp.ENGINE;
      @Override
     protected void addAlphabet(){
 
-        alphabet.add('a');
-         morseAlphabet.add(".-");
 
-        alphabet.add('b');
-        morseAlphabet.add("-...");
+         toDecryptMap.put('a',".-");
 
-        alphabet.add('c');
-        morseAlphabet.add("-.-.");
+         toDecryptMap.put('b',"-...");
 
-        alphabet.add('d');
-        morseAlphabet.add("-..");
+         toDecryptMap.put('c',"-.-.");
 
-        alphabet.add('e');
-        morseAlphabet.add(".");
+         toDecryptMap.put('d',"-..");
 
-        alphabet.add('f');
-        morseAlphabet.add("..-.");
+         toDecryptMap.put('e',".");
 
-        alphabet.add('g');
-        morseAlphabet.add("--.");
+         toDecryptMap.put('f',"..-.");
 
-        alphabet.add('h');
-        morseAlphabet.add("....");
+         toDecryptMap.put('g',"--.");
 
-        alphabet.add('i');
-        morseAlphabet.add("..");
+         toDecryptMap.put('h',"....");
 
-        alphabet.add('j');
-        morseAlphabet.add(".---");
+         toDecryptMap.put('i',"..");
 
-        alphabet.add('k');
-        morseAlphabet.add("-.-");
+         toDecryptMap.put('j',".---");
 
-        alphabet.add('l');
-        morseAlphabet.add(".-..");
+         toDecryptMap.put('k',"-.-");
 
-        alphabet.add('m');
-        morseAlphabet.add("--");
+         toDecryptMap.put('l',".-..");
 
-        alphabet.add('n');
-        morseAlphabet.add("-.");
+         toDecryptMap.put('m',"--");
 
-        alphabet.add('o');
-        morseAlphabet.add("---");
+         toDecryptMap.put('n',"-.");
 
-        alphabet.add('p');
-        morseAlphabet.add(".--.");
+         toDecryptMap.put('o',"---");
 
-        alphabet.add('q');
-        morseAlphabet.add("--.-");
+         toDecryptMap.put('p',".--.");
 
-        alphabet.add('r');
-        morseAlphabet.add(".-.");
+         toDecryptMap.put('q',"--.-");
 
-        alphabet.add('s');
-        morseAlphabet.add("...");
+         toDecryptMap.put('r',".-.");
 
-        alphabet.add('t');
-        morseAlphabet.add("-");
+         toDecryptMap.put('s',"...");
 
-        alphabet.add('u');
-        morseAlphabet.add("..-");
+         toDecryptMap.put('t',"-");
 
-        alphabet.add('v');
-        morseAlphabet.add("...-");
+         toDecryptMap.put('u',"..-");
 
-        alphabet.add('w');
-        morseAlphabet.add(".--");
+         toDecryptMap.put('v',"...-");
 
-        alphabet.add('x');
-        morseAlphabet.add("-..-");
+         toDecryptMap.put('w',".--");
 
-        alphabet.add('y');
-        morseAlphabet.add("-.--");
+         toDecryptMap.put('x',"-..-");
 
-        alphabet.add('z');
-        morseAlphabet.add("--..");
+         toDecryptMap.put('y',"-.--");
+
+         toDecryptMap.put('z',"--..");
+
 
     }
 
+    @Override
+     protected  void addNumerics(){
 
-    //TODO find regex s.t all my invalid characters will be added.
-     @Override
-     void addInvalids() {
+        toDecryptMap.put('0',"-----");
 
-         INVALID_CHARS.add('#');
-         INVALID_CHARS.add('$');
+        toDecryptMap.put('1',".----");
+
+        toDecryptMap.put('2',"..---");
+
+        toDecryptMap.put('3',"...--");
+
+        toDecryptMap.put('4',"....-");
+
+        toDecryptMap.put('5',".....");
+
+        toDecryptMap.put('6',"-....");
+
+        toDecryptMap.put('7',"--...");
+
+        toDecryptMap.put('8',"---..");
+
+        toDecryptMap.put('9',"----.");
+
+
      }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
