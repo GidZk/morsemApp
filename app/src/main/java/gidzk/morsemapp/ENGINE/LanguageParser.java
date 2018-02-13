@@ -13,6 +13,11 @@ public class LanguageParser implements Translator {
 
     //TODO add  (adress of some sort) constructor to be able to fetch code from some database
 
+
+    /**
+     *
+     * @return thread safe instance of the class.
+     */
     public static Translator  getInstance() {
 
         if (instance == null) {
@@ -21,7 +26,12 @@ public class LanguageParser implements Translator {
             return  instance;
     }
 
-
+    /**
+     * Changes the instances letterseparator and library to param 1, param 2.
+     *
+     * @param library library implementing LanguageExtension
+     * @param letterSeparator separates each letter
+     */
     public void changeLanguage(LanguageExtension library, Character letterSeparator ) {
         this.converter.changeLanguage(library);
         this.letterSeparator = letterSeparator;
@@ -36,9 +46,6 @@ public class LanguageParser implements Translator {
 
     @Override
     public Collection<String> decryptParse(String input) {
-
-
-
 
         return null;
     }
