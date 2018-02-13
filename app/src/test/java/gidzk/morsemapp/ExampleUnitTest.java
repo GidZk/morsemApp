@@ -25,14 +25,14 @@ public class ExampleUnitTest {
     @Test
     public void parseIsOk() throws Exception{
 
-        LanguageParser handler = new LanguageParser();
+        Translator handler =  LanguageParser.getInstance();
         Collection oldParse = handler.encryptParse("OLDPARSE");
         //System.out.println(oldParse);
 
 
-        Collection<String> wospwaces =  handler.decryptParse("abc");
-        Collection<String> wSpaces  =  handler.decryptParse("Abc B C");
-        Collection<String> specials = handler.decryptParse(". , : ? ' - / "+ (char) (34) + " @ =");
+        Collection<String> wospwaces =  handler.decryptParse_raw("abc");
+        Collection<String> wSpaces  =  handler.decryptParse_raw("Abc B C");
+        Collection<String> specials = handler.decryptParse_raw(". , : ? ' - / "+ (char) (34) + " @ =");
 
 
        System.out.println( "without spaces " +  (wospwaces));
@@ -52,13 +52,25 @@ public class ExampleUnitTest {
 
         String notParsed = "Abc B C";
 
-        Translator handler1 = new LanguageParser();
-        Translator handler2 = new LanguageParser(library_english);
+        Translator handler =  LanguageParser.getInstance();
 
 
-        Collection<String> wospwaces =  handler2.decryptParse("abc");
-        Collection<String> wSpaces  =  handler2.decryptParse("Abc B C");
-        Collection<String> specials = handler2.decryptParse(". , : ? ' - / "+ (char) (34) + " @ =");
+
+        Collection<String> wospwaces =  handler.decryptParse_raw("abc");
+        Collection<String> wSpaces  =  handler.decryptParse_raw("Abc B C");
+        Collection<String> specials = handler.decryptParse_raw(". , : ? ' - / "+ (char) (34) + " @ =");
+
+
+        System.out.println( "without spaces " +  (wospwaces));
+        System.out.println(" with spaces " + (wSpaces));
+        System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
+        System.out.println("Special characters: " + specials);
+
+        handler.changeLanguage(new Library_English(),'!');
+
+        wospwaces =  handler.decryptParse_raw("abc");
+        wSpaces  =  handler.decryptParse_raw("Abc B C");
+        specials = handler.decryptParse_raw(". , : ? ' - / "+ (char) (34) + " @ =");
 
 
         System.out.println( "without spaces " +  (wospwaces));
@@ -67,7 +79,7 @@ public class ExampleUnitTest {
         System.out.println("Special characters: " + specials);
 
 
-        assertArrayEquals(handler1.decryptParse(notParsed).toArray(),handler2.decryptParse(notParsed).toArray());
+
 
 
 
@@ -77,9 +89,6 @@ public class ExampleUnitTest {
     @Test
     public void testCharConverterDifferentType(){
 
-        LanguageExtension lib =  new TESTLIBRARY();
-        Translator c = new LanguageParser(lib);
-        System.out.println(c.decryptParse("a"));
 
 
     }

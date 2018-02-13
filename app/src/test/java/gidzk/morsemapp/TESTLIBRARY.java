@@ -2,7 +2,6 @@ package gidzk.morsemapp;
 
 import java.util.HashMap;
 
-import gidzk.morsemapp.ENGINE.CharConverter;
 import gidzk.morsemapp.ENGINE.LanguageExtension;
 
 /**
@@ -14,7 +13,7 @@ public class TESTLIBRARY implements LanguageExtension {
 
     @Override
     public String languageName() {
-        return "untz";
+        return "untzTestuntz";
     }
 
     @Override

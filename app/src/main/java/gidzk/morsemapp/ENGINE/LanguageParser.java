@@ -7,20 +7,40 @@ import java.util.List;
 import gidzk.morsemapp.Libs.Library_English;
 
 public class LanguageParser implements Translator {
-    CharConverter converter;
+    private CharConverter converter;
+    private  char letterSeparator;
+    private static LanguageParser instance;
 
     //TODO add  (adress of some sort) constructor to be able to fetch code from some database
-    //TODO add
 
-    public LanguageParser(){
-        this.converter = new SuperMommaCharConverter(new Library_English());
+    public static Translator  getInstance() {
 
+        if (instance == null) {
+            instance = new LanguageParser();
+        }
+            return  instance;
     }
 
-    public LanguageParser(LanguageExtension library){
 
-        this.converter = new SuperMommaCharConverter(library);
+    public void changeLanguage(LanguageExtension library, Character letterSeparator ) {
+        this.converter.changeLanguage(library);
+        this.letterSeparator = letterSeparator;
+    }
 
+
+    private LanguageParser(){
+        this.converter = new SuperMommaCharConverter(new Library_English());
+        this.letterSeparator = '|';
+    }
+
+
+    @Override
+    public Collection<String> decryptParse(String input) {
+
+
+
+
+        return null;
     }
 
     /**
@@ -30,13 +50,13 @@ public class LanguageParser implements Translator {
      *               : specified string from current domain alphabet
      *
      *
-     * @return a List of Strings in current language
+     * @return a List of strings, to be
      * ensures :
      */
     // TODO Rework in order to be able to use generocs, one way might be to implement it with ->
     // TODO     -> a generic list, could be done if the space were put in some genericclass, and initilized in the charconverter
     //
-    public Collection<String> decryptParse(String input){
+    public Collection<String> decryptParse_raw(String input){
 
         List <String>         outer = new ArrayList<>();
         StringBuilder builder       = new StringBuilder();
@@ -45,7 +65,7 @@ public class LanguageParser implements Translator {
         for (Character c : input.toLowerCase().toCharArray()){
 
             if (c != ' '){
-                builder.append(converter.decrypt(c)).append("|");
+                builder.append(converter.decrypt(c)).append(letterSeparator);
 
             }else {
                 inner = builder.toString();
@@ -60,6 +80,9 @@ public class LanguageParser implements Translator {
 
     return outer;
     }
+
+
+
 
     // todo : implement this method
     public Collection<String> encryptParse(String input){

@@ -12,8 +12,12 @@ public interface Translator {
 
     Collection<String> decryptParse(String input);
 
+    Collection<String> decryptParse_raw(String input);
+
     Collection<String> encryptParse(String input);
 
-
+    void changeLanguage(LanguageExtension library, Character letterSeparator );
 
 }
+
+

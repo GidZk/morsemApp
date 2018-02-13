@@ -20,7 +20,6 @@ import java.util.HashMap;
         toEncryptMap = library.initAlphabet_encrpyt();
         this.library = library;
 
-
     }
 
     @Override
@@ -33,24 +32,25 @@ import java.util.HashMap;
         return toEncryptMap.get(str);
     }
 
+     @Override
+     public void changeLanguage(LanguageExtension library) {
+         this.library = library;
+     }
 
-    public HashMap getMap() {
+
+
+
+
+     public HashMap getMap() {
         return toDecryptMap;
 
     }
 
 
 
-    protected void changeLanguage(LanguageExtension library){
-
-        this.library = library;
-
-
     }
 
 
-
-}
 
 
 
