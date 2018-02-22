@@ -39,8 +39,6 @@ import java.util.HashMap;
 
 
 
-
-
      public HashMap getMap() {
         return toDecryptMap;
 

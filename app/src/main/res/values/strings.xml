@@ -6,5 +6,12 @@
         Lorem Ipsum has been the industrys
         standard dummy text ever since the 1500s,
         when an unknown printer took a galley of</string>
+    <string name="attribute">attribute</string>
+
+
+    <!-- Strings for welcome activity-->
+    <string name ="welcome_morse">.-- . .-.. -.-. --- -- .</string>
+    <string name ="welcome_reg">Welcome to MorseMap</string>
+    <string name ="welcome_button">Click to continues</string>
 
 </resources>
