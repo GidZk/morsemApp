@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+
+
+    <!-- Statusbar color -->
+    <color name="colorPrimaryDark">#000000</color>
+    <!-- No idea what this is  -->
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Header Color-->
+    <color name="colorPrimary">#3e2723</color>
+
+    <!-- BackgroundColor -->
+    <color name="colorBackground">#5d4037</color>
+
+
+    <!-- Textcolor -->
+    <color name="colorTextPrimary">#fff9c4</color>
+
+
+
 </resources>
