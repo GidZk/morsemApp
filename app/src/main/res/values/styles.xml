@@ -3,19 +3,85 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+
+
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
 
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/color_header</item>
         <item name="android:windowBackground">@color/colorBackground</item>
-        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColor">@color/color_text_dark</item>
 
-    </style>]
-
-
+    </style>
 
 
+
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =============================   STRING STYLES ===============================-->
+
+    <!-- =======body styles ======= -->
+
+    <style name="Text_body_Gray">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:gravity">center_horizontal</item>
+    <item name="android:textSize">10sp</item>
+    <item name="android:fontFamily">courier</item>
+    <item name="android:textColor">@color/color_text_dark</item>
+    <item name="android:lineSpacingExtra">5dp</item>
+    <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <!--======= Header styles =======-->
+
+    <!-- Gray text header,centered -->
+    <style name="Text_Heading_Gray">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">courier</item>
+        <item name="android:textColor">@color/color_text_dark</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:textStyle">bold</item>
+
+
+    </style>
+    <!-- Black text header, centered -->
+    <style name="Text_Heading_Black">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:fontFamily">courier</item>
+        <item name="android:textColor">@color/color_text_gray</item>
+        <item name="android:lineSpacingExtra">20dp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
 
 
 </resources>

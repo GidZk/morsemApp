@@ -10,8 +10,9 @@
 
 
     <!-- Strings for welcome activity-->
-    <string name ="welcome_morse">.-- . .-.. -.-. --- -- .</string>
-    <string name ="welcome_reg">Welcome to MorseMap</string>
-    <string name ="welcome_button">Click to continues</string>
+    <string name="welcome_morse">-.-.-.-.-.-</string>
+    <string name="welcome_reg">Welcome to MorseMap</string>
+    <string name="welcome_button">Click to continues</string>
+    <string name="title_activity_input">InputActivity</string>
 
 </resources>

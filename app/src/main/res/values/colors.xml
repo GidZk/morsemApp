@@ -7,15 +7,28 @@
     <!-- No idea what this is  -->
     <color name="colorAccent">#FF4081</color>
 
-    <!-- Header Color-->
-    <color name="colorPrimary">#3e2723</color>
+
+
+    <!-- Header color -->
+    <color name ="color_header">#212121</color>
+
 
     <!-- BackgroundColor -->
-    <color name="colorBackground">#3e2723</color>
+    <color name="colorBackground">#ffe0b2</color>
+
+
+
+
+
 
 
     <!-- Textcolor -->
-    <color name="colorTextPrimary">#fff9c4</color>
+    <color name="color_text_dark">#212121</color>
+
+    <!-- Header Text color -->
+    <color name ="color_text_gray">#616161</color>
+
+    <color name="transparent">#00ffffff</color>
 
 
 
