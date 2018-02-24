@@ -8,9 +8,10 @@
     android:background="@color/colorBackground">
 
 
+
     <TextView
         android:id="@+id/Welcome"
-        style="@style/Text_Heading_Gray"
+        style="@style/Text_Heading_Black"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="10dp"
@@ -25,7 +26,7 @@
 
 
     <TextView
-        style="@style/Text_Heading_Black"
+        style="@style/Text_Heading_Gray"
         android:id="@+id/welcome_morse_"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
