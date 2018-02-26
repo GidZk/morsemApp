@@ -16,6 +16,7 @@ import java.util.HashMap;
     //todo : either make the maps immutable, by making the instancevariable immutable maps and let ->
     // todo: -> instanice happen, and the reutrning a immutablemap.
     protected SuperMommaCharConverter(LanguageExtension library)  {
+
         toDecryptMap = library.initAlphabet_decrpyt();
         toEncryptMap = library.initAlphabet_encrpyt();
         this.library = library;

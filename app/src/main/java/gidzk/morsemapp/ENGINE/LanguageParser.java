@@ -9,9 +9,9 @@ import gidzk.morsemapp.Libs.Library_English;
 public class LanguageParser implements Translator {
     private CharConverter converter;
     private  char letterSeparator;
+    private char wordSeparator;
     private static LanguageParser instance;
 
-    //TODO add  (adress of some sort) constructor to be able to fetch code from some database
 
 
     /**
@@ -37,25 +37,52 @@ public class LanguageParser implements Translator {
         this.letterSeparator = letterSeparator;
     }
 
-
+    /**
+     * default constructor, called upon unless one wants changes to be done.
+     */
     private LanguageParser(){
         this.converter = new SuperMommaCharConverter(new Library_English());
-        this.letterSeparator = '|';
+        this.letterSeparator = ' ';
+        this.wordSeparator = '/';
     }
-
 
     @Override
-    public Collection<String> decryptParse(String input) {
+    public String appendTo(Character input) {
 
-        return null;
+       return converter.decrypt(input);
+
     }
+
+    /**
+     *
+     * @param input,
+     * @return
+     */
+    @Override
+    public String decryptParse(String input) {
+
+        StringBuilder s = new StringBuilder();
+
+        for (Character c : input.toLowerCase().toCharArray()){
+
+            if (c != ' ') {
+                s.append(converter.decrypt(c)).append(letterSeparator);
+            }else{
+               s.append(wordSeparator);
+            }
+        }
+
+        return s.toString();
+
+    }
+
+
 
     /**
      *
      * @param input
      *  requirements : non null String
      *               : specified string from current domain alphabet
-     *
      *
      * @return a List of strings, to be
      * ensures :
@@ -87,8 +114,6 @@ public class LanguageParser implements Translator {
 
     return outer;
     }
-
-
 
 
     // todo : implement this method

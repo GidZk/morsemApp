@@ -30,15 +30,17 @@ public class ExampleUnitTest {
         //System.out.println(oldParse);
 
 
-        Collection<String> wospwaces =  handler.decryptParse_raw("abc");
+        Collection<String> wospwaces =  handler.decryptParse_raw("abcdefg");
         Collection<String> wSpaces  =  handler.decryptParse_raw("Abc B C");
         Collection<String> specials = handler.decryptParse_raw(". , : ? ' - / "+ (char) (34) + " @ =");
+        String niceParse            = handler.decryptParse("ABCDEFG");
 
 
        System.out.println( "without spaces " +  (wospwaces));
-        System.out.println(" with spaces " + (wSpaces));
-        System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
-        System.out.println("Special characters: " + specials);
+        //System.out.println(" with spaces " + (wSpaces));
+        //System.out.println("ALPHABET" + "        A B C D E F G H I J K L M N O P Q R S T U V X Y Z ");
+       // System.out.println("Special characters: " + specials);
+        System.out.println("nicparse   " + niceParse );
 
 
     }

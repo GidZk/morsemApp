@@ -10,7 +10,9 @@ import java.util.List;
 
 public interface Translator {
 
-    Collection<String> decryptParse(String input);
+    String appendTo(Character input);
+
+    String decryptParse(String input);
 
     Collection<String> decryptParse_raw(String input);
 
