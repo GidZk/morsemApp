@@ -15,20 +15,18 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="@string/fillout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textOut"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.404" />
 
     <TextView
         android:id="@+id/textOut"
         style="@style/Text_body_Gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/fillout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
